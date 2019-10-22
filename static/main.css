@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+
+.nav-item{
+	font-size: 18px;
+	margin-left: 20px;
+}
+
+#home-title{
+	text-align: center;
+	margin-top: 80px;
+	margin-bottom: 20px;
+	font-size: 32px;
+	font-family: 'Raleway', sans-serif;
+}
+
+.brain-wrapper{
+	margin: 0 auto;
+}
+
+#brain{
+	width: 700px;
+	display: block;
+}
+
+#selections{
+	 width: 500px;
+	 height: 50px;
+	 text-align: center;
+	 margin: 0 auto;
+	 font-size: 30px;
+}
+
+ .card-header{
+ 	cursor: pointer;
+ }
+
+
+ .card-header p{
+ 	text-align: center;
+ 	color: #17a2b8;
+ 	font-size: 20px;
+ }
+
+
+#learn-more{
+	text-align: center
+}
