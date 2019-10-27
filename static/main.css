@@ -42,6 +42,10 @@
  	font-size: 20px;
  }
 
+ #summary, #qOne, #qTwo, #qThree{
+ 	padding: 20px;
+ }
+
 
 #learn-more{
 	text-align: center
