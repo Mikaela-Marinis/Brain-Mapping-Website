@@ -1,18 +1,38 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 
 
+main, body, html{
+	background-color: #fff6e4;
+}
+
+#navbar{
+	background-color:  white;
+}
+
+.navbar-brand{
+	color: #0D7ECF
+}
 .nav-item{
 	font-size: 18px;
-	margin-left: 20px;
+	margin-left: 25px;
+	color: #0D7ECF
+	
+}
+
+.nav-item:hover{
+	border-style: none;
+	background-color: #ededed;
+	border-radius: 42%;
 }
 
 #home-title, #quiz-title{
 	text-align: center;
-	margin-top: 80px;
-	margin-bottom: 20px;
-	font-size: 30px;
+	margin-top: 70px;
+	margin-bottom: 10px;
+	font-size: 22px;
 	font-family: 'Raleway', sans-serif;
 }
+
 
 .brain-wrapper{
 	margin: 0 auto;
@@ -23,36 +43,57 @@
 	display: block;
 }
 
+#brain-div, #brain-info-div{
+	background-color: white;
+}
+
+.accordion{
+	position: absolute;
+
+	top: 245px;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	width: 90%;
+}
+
 #selections{
 	 width: 500px;
 	 height: 50px;
 	 text-align: center;
 	 margin: 0 auto;
+	 margin-top: 10px;
 	 font-size: 30px;
 }
 
- .card-header{
+ .card a{
  	cursor: pointer;
+ 	background-color: #F5F5F5;
  }
-
 
  .card-header p{
  	text-align: center;
- 	color: #17a2b8;
+ 	color: #0D7ECF;
  	font-size: 20px;
  }
 
- #summary, #qOne, #qTwo, #qThree{
+ #summary, #qOne, #qTwo, #qThree, #note{
  	padding: 20px;
  }
 
+ #note{
+ 	position: absolute;
+ 	top: 560px;
+ }
 
 #learn-more{
 	text-align: center
 }
 
-#quiz-block{
+#brain-block, #quiz-block{
 	padding: 0;
+	background-color: white;
 }
 
 .quiz-div{

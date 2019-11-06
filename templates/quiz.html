@@ -365,8 +365,8 @@
                  onClick: function(e){
                  	  currentRegion = data[e.key]
                  	  backToNormal()
-                 	  $("#quiz-q1").html("What is this the name of the selected region?")
-                   	  $("#quiz-q2").html("What is this the function of the selected region?")
+                 	  $("#quiz-q1").html("What is the name of the selected region?")
+                   	  $("#quiz-q2").html("What is the function of the selected region?")
                       $('#quiz-q1-1-label').html(data[e.key].q1_1)
                       $('#quiz-q1-2-label').html(data[e.key].q1_2)
                       $('#quiz-q1-3-label').html(data[e.key].q1_3)
@@ -453,7 +453,7 @@
 	<div class="container-fluid">
 	    <div class="row">
 	        <div class= "col-1"></div>            
-	        <div class= "col border p-2">   
+	        <div id= "brain-block" class= "col border p-2">   
 	            <img id= "brain" src= "{{url_for('static', filename = 'brain-detailed.jpg')}}" usemap="#image-map" alt="brain map" >
 	        </div>
 	        <div id= "quiz-block" class= "col border p2">
