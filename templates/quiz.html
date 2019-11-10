@@ -349,6 +349,8 @@
 	 		 "q2_ans": ""},
 	 	}
 
+	 	var quizQuestionsHTML = '<p id="quiz-q1">What is this the name of the selected region?</p><div id="quiz-q1-1-div" class="quiz-div"><input class="q1" type="radio" id="quiz-q1-1" name="q1" ><label id="quiz-q1-1-label" for= "quiz-q1-1"></label></div><div id="quiz-q1-2-div" class="quiz-div"><input class="q1" type="radio" id="quiz-q1-2"  name="q1" ><label id="quiz-q1-2-label" for= "quiz-q1-2"></label></div><div id="quiz-q1-3-div" class="quiz-div"><input class="q1" type="radio" id="quiz-q1-3" name="q1" ><label id="quiz-q1-3-label" for= "quiz-q1-3"></label></div><p id="quiz-q2">What is this the function of the selected region?</p>  <div id="quiz-q2-1-div" class="quiz-div"><input class="q2" type="radio" id="quiz-q2-1" name="q2" ><label id="quiz-q2-1-label" for= "quiz-q2-1"></label> </div><div id="quiz-q2-2-div" class="quiz-div"> <input class="q2" type="radio" id="quiz-q2-2" name="q2" ><label id="quiz-q2-2-label" for= "quiz-q2-2"></label> </div><div id="quiz-q2-3-div" class="quiz-div"><input class="q2" type="radio" id="quiz-q2-3" name="q2" ><label id="quiz-q2-3-label" for= "quiz-q2-3"></label></div>'
+
             $(document).ready(function(){
 
                  $('#brain').mapster({
@@ -365,8 +367,7 @@
                  onClick: function(e){
                  	  currentRegion = data[e.key]
                  	  backToNormal()
-                 	  $("#quiz-q1").html("What is the name of the selected region?")
-                   	  $("#quiz-q2").html("What is the function of the selected region?")
+                 	  $("#quiz-questions-div").html(quizQuestionsHTML)
                       $('#quiz-q1-1-label').html(data[e.key].q1_1)
                       $('#quiz-q1-2-label').html(data[e.key].q1_2)
                       $('#quiz-q1-3-label').html(data[e.key].q1_3)
@@ -379,8 +380,7 @@
                    if  ($('#brain').mapster('get').length == 0){  
                    	  backToNormal()
                    	  currentRegion = data[e.key]
-                   	  $("#quiz-q1").html("What is this the name of the selected region?")
-                   	  $("#quiz-q2").html("What is this the function of the selected region?")
+                   	  $("#quiz-questions-div").html(quizQuestionsHTML)
                       $('#quiz-q1-1-label').html(data[e.key].q1_1)
                       $('#quiz-q1-2-label').html(data[e.key].q1_2)
                       $('#quiz-q1-3-label').html(data[e.key].q1_3)
@@ -391,7 +391,9 @@
                         }})})
 
             function backToNormal(){
-            	$("#button-div").html('<button id="submit" class="btn btn-primary" onclick="showResults()">Submit</button>')
+            	$("#alert-div").html('')
+            	$("#alert-div").removeClass()
+            	$("#button-div").html('<button id="submit" class="btn btn-info" onclick="showResults()">Submit</button>')
             	$(".quiz-div").each(function(i,div){
             		$(div).css("background-color", "white")
             	})
@@ -404,7 +406,7 @@
 
             function showResults(){
 
-            	$("#button-div").html("")
+            	let score = 0;
 
             	let q1_answer = currentRegion.q1_ans
             	let q2_answer = currentRegion.q2_ans
@@ -414,13 +416,15 @@
 
 
             	$(".q1").each(function(i,input){
-            		
-            		if (input.checked){
 
-            			let curID = "#" + $(input).attr("id")
+            		let curID = "#" + $(input).attr("id")
+            		$(curID+"-div").css("background-color", "white")
+
+            		if (input.checked){
 
             			if (curID == q1_correct_id){          				
             				$(curID+"-div").css("background-color", "#D4EDDA")
+            				score += 1
 
             			} else{
             				$(curID+"-div").css("background-color", "#F8D7DA")
@@ -430,12 +434,14 @@
             	})
 
             	$(".q2").each(function(i,input){
+            		let curID = "#" + $(input).attr("id")
+            		$(curID+"-div").css("background-color", "white")
+
             		if (input.checked){
-   			
-            			let curID = "#" + $(input).attr("id")
 
             			if (curID == q2_correct_id){
             				$(curID+"-div").css("background-color", "#D4EDDA")
+            				score += 1
 
             			} else{
             				$(curID+"-div").css("background-color", "#F8D7DA")
@@ -444,58 +450,58 @@
             		}
             	})
 
+            	let alertText = "Score: " + score + "/2"
+
+            	$("#alert-div").hide()
+
+            	$("#alert-div").html("<div id='score' class = 'alert' role='alert'></div>")
+
+            	if (score < 2){
+            		$("#alert-div").addClass("alert-danger")
+            		if ($("#alert-div").hasClass("alert-success")){
+            			$("#alert-div").removeClass("alert-success")
+            		}
+            		alertText += ". Try again!"
+            	} else{
+            		$("#alert-div").addClass("alert-success")
+            		if ($("#alert-div").hasClass("alert-danger")){
+            			$("#alert-div").removeClass("alert-danger")
+            		}
+            		alertText += ". Nice work!"
+            		
+            	}
+
+            	$("#score").html(alertText)
+
+            	$("#alert-div").fadeIn()
+
+
+
+
             }
 
         </script>
-	
-	<p id= "quiz-title">Click on a brain region to quiz yourself!</p>
 
-	<div class="container-fluid">
-	    <div class="row">
-	        <div class= "col-1"></div>            
-	        <div id= "brain-block" class= "col border p-2">   
-	            <img id= "brain" src= "{{url_for('static', filename = 'brain-detailed.jpg')}}" usemap="#image-map" alt="brain map" >
+    <div id="quiz-content">
+	    <div id="brain-div-container">      
+	        <div id="title-div">
+	          <p id="quiz-title">Click on a brain region to quiz yourself!</p>
+	       </div>     
+	        <div id="brain-div" >   
+	            <img id= "brain" class = "img-fluid" src= "{{url_for('static', filename = 'brain-detailed.jpg')}}" usemap="#image-map" alt="brain map" >
 	        </div>
-	        <div id= "quiz-block" class= "col border p2">
-	        	
-	        	   <p id="quiz-q1"></p>
-	        	   	
-	        	   <div id="quiz-q1-1-div" class="quiz-div">
-	        	   	<input class="q1" type="radio" id="quiz-q1-1" name="q1" >
-	        	   	<label id="quiz-q1-1-label" for= "quiz-q1-1"></label>
-	        	   </div>
-	        	   <div id="quiz-q1-2-div" class="quiz-div">
-	        	   	<input class="q1" type="radio" id="quiz-q1-2"  name="q1" >
-	        	   	<label id="quiz-q1-2-label" for= "quiz-q1-2"></label>
-	        	   </div>
-	        	   <div id="quiz-q1-3-div" class="quiz-div">
-	        	   	<input class="q1" type="radio" id="quiz-q1-3" name="q1" >
-	               	<label id="quiz-q1-3-label" for= "quiz-q1-3"></label>
-	               </div>
+	        <div id= "brain-info-div">
 
-	               <p id="quiz-q2"></p>
-	               
-	               <div id="quiz-q2-1-div" class="quiz-div">
-	               	<input class="q2" type="radio" id="quiz-q2-1" name="q2" >
-	               	<label id="quiz-q2-1-label" for= "quiz-q2-1"></label> 
-	               </div>
-	               <div id="quiz-q2-2-div" class="quiz-div">          
-	        	   	<input class="q2" type="radio" id="quiz-q2-2" name="q2" >
-	        	   	<label id="quiz-q2-2-label" for= "quiz-q2-2"></label> 
-	        	   </div>
-	        	   <div id="quiz-q2-3-div" class="quiz-div">
-	        	   	<input class="q2" type="radio" id="quiz-q2-3" name="q2" >
-	        	   	<label id="quiz-q2-3-label" for= "quiz-q2-3"></label>
-	        	   </div>
+	        	<div id="alert-div"></div>
+
+	            <div id="quiz-questions-div"></div>
 	              
-	              <div id="button-div">
-	               
-	   			  </div>
+	             <div id="button-div"> </div>
 	        	  
 	        </div>
-	         <div class= "col-1"></div>
 	    </div>
 	</div>
+	
 
 
 

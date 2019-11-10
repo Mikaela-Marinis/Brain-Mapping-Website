@@ -256,16 +256,19 @@
 
        </script>  
 
-   <p id="home-title">Mapping the brain: Learning made simple</p>
+   
     
 
-    <div id="main-content" class="container-fluid">
-        <div class="row">
-            <div class= "col-1"></div>            
-            <div id="brain-div" class= "col border p-2">   
-                <img id= "brain" src= "{{url_for('static', filename = 'brain-detailed.jpg')}}" usemap="#image-map" alt="brain map" >
+    <div id="home-content" class="container-fluid">
+            
+        <div id="brain-div-container">      
+            <div id="title-div">
+              <p id="home-title">Mapping the brain: Learning made simple</p>
+           </div>     
+            <div id="brain-div" >   
+                <img id= "brain" class = "img-fluid" src= "{{url_for('static', filename = 'brain-detailed.jpg')}}" usemap="#image-map" alt="brain map" >
             </div>
-            <div id= "brain-info-div" class= "col border p2">
+            <div id= "brain-info-div">
                  <div id="selections"></div>
                  <p id="summary">Welcome, click anywhere on the brain to start exploring! <br><br>
                  After clicking a region, click the buttons below to learn more!</p>
@@ -277,7 +280,6 @@
                            What is it made of? 
                        </p>
                      </a>
-
                      <div id="qOne" class="collapse" aria-labelledby="headingOne" data-parent="#questions">
                        <div class="card-body">
                        </div>
@@ -308,7 +310,6 @@
                  </div>
                  <p id="note">*Once you have selected a region, click on it again to deselect it*</p>
             </div>
-             <div class= "col-1"></div>
         </div>
     </div>
 
