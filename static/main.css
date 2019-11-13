@@ -186,18 +186,22 @@ body{
 }
 
 #faq-content{
-	padding-top: 25px;
+	padding: 25px 0;
 }
 
 
 #faq-div-container{
 	width: 88%;
 	margin: 0 auto;
+	padding: 20px;
 	background-color: white;
 	border: 1px solid gray;
 	border-radius: 20px;
-	height: 600px;
 
+}
+
+#faq-div-container h5{
+	margin-top: 30px;
 }
 
 
