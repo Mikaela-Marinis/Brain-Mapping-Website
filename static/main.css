@@ -1,14 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 
 
-main, body, html{
-	background-color: #FADBD2;
+body{
+	
+	
+	height: 100vh;
+	background-color: #ffd6cc;
+	background-image: linear-gradient(315deg,  #ffd6cc 0%, #ffd6cc 74%);
+	color: #222222;
+
 }
 
 #home-content, #quiz-content{
 	padding-top: 25px;
 	padding-bottom: 20px;
-
+	
 }
 
 
@@ -31,6 +37,7 @@ main, body, html{
 
 .nav-item:hover{
 	border-style: none;
+	border-color: #222222
 	background-color: #ededed;
 	border-radius: 42%;
 }
@@ -39,15 +46,14 @@ main, body, html{
 	font-weight: 600;
 }
 
+#brain-div-container{
+	width: 88%;
+	margin: 0 auto;
+}
 
-#home-title, #quiz-title{
-	text-align: center;
-	position: relative;
-	top: 10px;
-	font-size: 26px;
-	font-weight: 500;
-	font-family: 'Raleway', sans-serif;
 
+#brain-div, #brain-info-div, #title-div{
+	background-color: white;
 }
 
 #title-div{
@@ -58,18 +64,14 @@ main, body, html{
 	border: 1px solid gray;
 }
 
-#brain-div-container{
-	width: 88%;
-	margin: 0 auto;
+#home-title, #quiz-title{
+	text-align: center;
+	position: relative;
+	top: 10px;
+	font-size: 26px;
+	font-weight: 500;
+	font-family: 'Raleway', sans-serif;
 }
-
-#brain-div{
-	float: left;
-	width: 55%;
-	overflow: hidden;
-	
-}
-
 
 #brain-div, #brain-info-div{
 	padding: 20px;
@@ -77,19 +79,18 @@ main, body, html{
 	height: 600px;
 }
 
-#brain-info-div{
-	float: right;
-	width: 45%;
+
+#brain-div{
+	float: left;
+	width: 55%;
+	border-bottom-left-radius: 20px;
 	overflow: hidden;
-	position: relative;
-	padding: 0;
-	margin: 0;
-	
 }
 
 
 .brain-wrapper{
 	margin: 0 auto;
+
 }
 
 #brain{
@@ -98,16 +99,17 @@ main, body, html{
 }
 
 
-#brain-div, #brain-info-div, #title-div{
-	background-color: white;
-}
-
-#brain-div{
-	border-bottom-left-radius: 20px;
-}
-
 #brain-info-div{
 	border-bottom-right-radius: 20px;
+	float: right;
+	width: 45%;
+	position: relative;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;	
+}
+
+
 }
 
 .accordion{
@@ -235,7 +237,7 @@ main, body, html{
 		height: auto;
 	}
 
-	#home-content, #quiz-content{
+	body{
 		overflow-y: visible
 	}
 
