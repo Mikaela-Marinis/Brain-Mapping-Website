@@ -29,7 +29,7 @@ body{
 	margin-left: 25px;	
 }
 
-.nav-item:hover{
+.nav-link:hover{
 	border-style: none;
 	border-color: #222222
 	background-color: #ededed;
@@ -144,14 +144,30 @@ body{
   padding-left: 35px;
   display: flex;
   align-items: center;
-
+  position: relative;
+ 
 }
+
+.icon-div{
+	position: absolute;
+	left: 12px;
+	top: 3px;
+}
+
+.fa-check{
+	color: green;
+}
+
+.fa-times{
+	color: red;
+	padding-left: 2px;
+}
+
 
 .quiz-div label{
 	position: relative;
 	left: 5px;
 	top: 3px;
-
 }
 
 #quiz-q1, #quiz-q2{
@@ -276,6 +292,8 @@ body{
 	#sumarry, .card-body, #note, #qOne, #qTwo, #qThree, #summary{
 		font-size: 14px;
 	}
+
+
 
 	#brain-info-div{
 		height: 650px;

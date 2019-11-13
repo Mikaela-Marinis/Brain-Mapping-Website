@@ -391,6 +391,7 @@
                         }})})
 
             function backToNormal(){
+            	$("i").remove()
             	$("#alert-div").html('')
             	$("#alert-div").removeClass()
             	$("#button-div").html('<button id="submit" class="btn btn-info" onclick="showResults()">Submit</button>')
@@ -405,6 +406,8 @@
             }
 
             function showResults(){
+
+            	$("i").remove()
 
             	let score = 0;
 
@@ -424,10 +427,12 @@
 
             			if (curID == q1_correct_id){          				
             				$(curID+"-div").css("background-color", "#D4EDDA")
+            				$(curID+"-div").prepend('<div class="icon-div"><i class="fas fa-check"></i></div>')
             				score += 1
 
             			} else{
             				$(curID+"-div").css("background-color", "#F8D7DA")
+            				$(curID+"-div").prepend('<div class="icon-div"><i class="fas fa-times"></i></div>')
             			}
 
             		}
@@ -441,10 +446,13 @@
 
             			if (curID == q2_correct_id){
             				$(curID+"-div").css("background-color", "#D4EDDA")
+            				$(curID+"-div").prepend('<div class="icon-div"><i class="fas fa-check"></i></div>')
+
             				score += 1
 
             			} else{
             				$(curID+"-div").css("background-color", "#F8D7DA")
+            				$(curID+"-div").prepend('<div class="icon-div"><i class="fas fa-times"></i></div>')
             			}
 
             		}

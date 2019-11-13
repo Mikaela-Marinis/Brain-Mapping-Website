@@ -25,6 +25,10 @@
     <!--Image Mapster-->
     <script type="text/javascript" src="{{url_for('static', filename = 'jquery.imagemapster.js')}}"></script>
 
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://use.fontawesome.com/releases/v5.1.0/css/all.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
+
     <script>
     $(function(){
         $('a').each(function(){
@@ -47,18 +51,21 @@
 
 <body>
     <header class="site-header">
-      <nav id="navbar" class="navbar navbar-expand-sm">
+      <nav id="navbar" class="navbar navbar-expand-md">
         <div class="container">
           <span class="navbar-brand mr-4">Mapping the Brain</span>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
-            <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link" href="{{ url_for('home') }}">Learn the Brain</a>
-              <a class="nav-item nav-link" href="{{ url_for('quiz') }}">Quiz Yourself</a>
-              <a class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
-              <a class="nav-item nav-link" href="{{ url_for('faq') }}">FAQ</a>
+            <ul class="navbar-nav mr-auto">
+              <li class= "nav-item"> <a class="nav-link" href="{{ url_for('home') }}">Learn the Brain</a></li>
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('quiz') }}">Quiz Yourself</a></li>
+              <li class="nav-item">  <a class="nav-link" href="{{ url_for('about') }}">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="{{ url_for('faq') }}">FAQ</a></li></li>
+              
+            
+              
             </div>
           </div>
         </div>
