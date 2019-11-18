@@ -10,13 +10,13 @@ body{
 
 #home-content, #quiz-content{
 	padding-top: 25px;
-	padding-bottom: 20px;	
+	padding-bottom: 30px;	
 }
 
 
 #navbar{
 	background-color:  white;
-	height: 50px;
+	
 }
 
 .nav-item, .navbar-brand{
@@ -70,7 +70,7 @@ body{
 #brain-div, #brain-info-div{
 	padding: 20px;
 	border: 1px solid gray;
-	height: 600px;
+	height: 590px;
 }
 
 #brain-div{
@@ -85,7 +85,7 @@ body{
 }
 
 #brain{
-	width: 97%;
+	width: 95%;
 	display: block;
 }
 

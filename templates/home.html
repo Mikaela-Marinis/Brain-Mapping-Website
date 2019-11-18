@@ -243,10 +243,11 @@
                     $('#qTwo').html(data[e.key].q2)
                     $('#qThree').html(data[e.key].q3)
                  },
-                         onMouseover: function (e) {
+
+                onMouseover: function (e) {
                   //if there is no area that is clicked
                    if  ($('#brain').mapster('get').length == 0){ 
-                                $('#selections').html(e.key)
+                      $('#selections').html(e.key)
                       $('#summary').html(data[e.key].summary)
                       $('#qOne').html(data[e.key].q1)
                       $('#qTwo').html(data[e.key].q2)
