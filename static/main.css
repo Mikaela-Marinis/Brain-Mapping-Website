@@ -202,12 +202,12 @@ body{
 	font-size: 18px;
 }
 
-#faq-content{
+#faq-content, #about-content, #four04-content{
 	padding: 25px 0;
 }
 
 
-#faq-div-container{
+.non-brain-content{
 	width: 88%;
 	margin: 0 auto;
 	padding: 20px;
@@ -219,6 +219,38 @@ body{
 
 #faq-div-container h5{
 	margin-top: 30px;
+}
+
+#four04-div-container{
+	padding-top: 10px;
+	text-align: center;
+}
+
+#four04-text{
+    font-size: 150px;
+   -webkit-text-stroke: 2px #ffd6cc;
+   color: white;
+   text-shadow:
+       3px 3px 0 #000,
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+}
+
+#four04-p1{
+	font-size: 20px;
+}
+
+#four04-p2{
+	font-size: 18px;
+	padding-top: 20px;
+	padding-bottom: 100px;
+}
+
+.fa-arrow-up{
+	padding: 10px;
+	color: #0D7ECF;
 }
 
 
